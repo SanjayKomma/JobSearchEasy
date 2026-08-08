@@ -1,0 +1,32 @@
+{
+  "name": "jobsearcheasy",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mongodb",
+    "jwt",
+    "mongoose",
+    "restfulapi"
+  ],
+  "homepage": "https://github.com/SanjayKomma/JobSearchEasy#readme",
+  "bugs": {
+    "url": "https://github.com/SanjayKomma/JobSearchEasy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanjayKomma/JobSearchEasy.git"
+  },
+  "author": "Sanjay Komma",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "mongoose": "^9.9.1"
+  }
+}
