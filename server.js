@@ -1,6 +1,6 @@
 //mongodb setup
 const mongoose = require("mongoose");
-const { MONGODB_URI } = require("./utils/config");
+const { MONGODB_URI, PORT, HOST } = require("./utils/config");
 const dns = require('dns');
 const app = require("./app");
 dns.setServers(['8.8.8.8', '1.1.1.1']);
