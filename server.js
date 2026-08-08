@@ -1,3 +1,4 @@
+//mongodb setup
 const mongoose = require("mongoose");
 const { MONGODB_URI } = require("./utils/config");
 const dns = require('dns');
