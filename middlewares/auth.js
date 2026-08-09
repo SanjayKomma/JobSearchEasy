@@ -17,7 +17,7 @@ const isAuthenticated = async (request, response, next) => {
     }
 }
 const allowRoles = (roles) => {
-    return (request, response, next) => {
+    return async (request, response, next) => {
         const userId = request.userId;
         const user = await User.findById(userId);
         if (!user){

@@ -47,16 +47,23 @@ const authController = {
             return response.status(500).json({error:error.message});
         }
     },
-    getProfile:(request, response) =>{
+    getProfile: async (request, response) =>{
         try{
-            return response.status(200).json({message:"User profile retrieved successfully"});
+            const userId = request.userId;
+            const user = await User.findById(userId).select('-password -__v');
+            response.status(200).json({user});
         }
         catch(error){
             return res.status(500).json({error:error.message});
         }
     },
-    logout:(request, response) =>{
+    logout:async (request, response) =>{
         try{
+            response.clearCookie('token',{
+                httpOnly: true,
+                secure: ENV === "production",
+                sameSite: ENV === "production" ? "none" : "lax"
+            });
             return response.status(200).json({message:"User logged out successfully"});
         }
         catch(error){
