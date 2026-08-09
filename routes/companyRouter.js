@@ -9,7 +9,7 @@ companyRouter.get('/', getAllCompanies);
 companyRouter.get('/:id', getCompanyById);
 companyRouter.put('/:id', updateCompany);
 companyRouter.delete('/:id', deleteCompany);
-companyRouter.post('/recruiter', createRecruiter);
-companyRouter.get('/recruiter', getAllRecruiters);
+companyRouter.post('/:id', createRecruiter);
+companyRouter.get('/:id/recruiters', getAllRecruiters);
 
 module.exports = companyRouter;
