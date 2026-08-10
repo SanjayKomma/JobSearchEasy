@@ -1,0 +1,10 @@
+const express = require('express');
+const { isAuthenticated, allowRoles } = require('../middlewares/auth');
+const { applyForJob, getUserApplications, updateApplicationStatus, getApplicationById } = require('../controllers/applicationController');
+const applicationRouter = express.Router();
+applicationRouter.use(isAuthenticated);
+applicationRouter.post('/:jobId/apply',allowRoles(['user', 'admin']), applyForJob);
+applicationRouter.get('/', allowRoles(['user', 'admin']), getUserApplications);
+applicationRouter.put('/:applicationId/status', allowRoles(['recruiter']), updateApplicationStatus);
+applicationRouter.get('/:applicationId', allowRoles(['user','recruiter','admin']), getApplicationById);
+module.exports = applicationRouter;
