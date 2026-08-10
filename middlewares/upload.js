@@ -12,12 +12,12 @@ const createUploadDir = () => {
 createUploadDir();
 const storage = multer.diskStorage({
     destination: (request, file, cb) =>{
-        let uploadPath = 'uploads/';
+        let uploadPath = 'upload/';
         if(file.fieldname === 'profilePicture'){
-            uploadPath += 'profiles/';
+            uploadPath += 'profile/';
         }
         else if(file.fieldname === 'resume'){
-            uploadPath += 'resumes/';
+            uploadPath += 'resume/';
         }
         else if(file.fieldname === 'companyLogo'){
             uploadPath += 'companies/';
@@ -30,12 +30,13 @@ const storage = multer.diskStorage({
     }
 });
 const fileFilter = (request, file, cb) =>{
+    console.log("details", file);
     if(file.fieldname === 'profilePicture' || file.fieldname === 'companyLogo'){
         if(file.mimetype.startsWith('image/')){
             cb(null, true);
         }
         else{
-            cb(new Error('Only image files are allowed!'), false);
+            cb(null, false);
         }
     }
     else if(file.fieldname === 'resume'){
@@ -43,7 +44,7 @@ const fileFilter = (request, file, cb) =>{
             cb(null, true);
         }
         else{
-            cb(new Error('Only PDF files are allowed!'), false);
+            cb(null, false);
         }
     }
     else{
