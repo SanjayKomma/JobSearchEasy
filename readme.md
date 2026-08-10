@@ -60,3 +60,130 @@ sample company
     "foundedYear": 1976
 }
 ```
+job samples
+```json
+{
+    "title": "Full-Stack Developer",
+    "description": "We are looking for a full-stack developer to join our team. The ideal candidate should have experience in developing web applications using Node.js, React, and MongoDB. They should also have a good understanding of API development and be comfortable working with a team.",
+    "location": "Bangalore, India",
+    "company": "Google",
+    "salary": {
+        "min": 50000,
+        "max": 70000,
+        "currency": "INR"
+    },
+    "jobType": "full-time",
+    "experienceLevel": "mid-level",
+    "skills": [
+        "Node.js",
+        "React",
+        "MongoDB",
+        "API development"
+    ],
+    "applicationDeadline": "2022-06-30",
+}
+```
+```json
+{
+    "title": "Data Analyst",
+    "description": "We are looking for a data analyst to join our team. The ideal candidate should have experience in analyzing large datasets using SQL and Python. They should also have a good understanding of data visualization and be comfortable working with a team.",
+    "location": "Hyderabad, India",
+    "company": "facebook",
+    "salary": {
+        "min": 60000,
+        "max": 90000,
+        "currency": "INR"
+    },
+    "jobType": "full-time",
+    "experienceLevel": "mid-level",
+    "skills": [
+        "SQL",
+        "Python",
+        "Data visualization"
+    ],
+    "applicationDeadline": "2022-06-30",
+}
+```
+```json
+{
+    "title": "Software Engineer",
+    "description": "We are looking for a software engineer to join our team. The ideal candidate should have experience in developing web applications using Java and Spring. They should also have a good understanding of API development and be comfortable working with a team.",
+    "location": "Bangalore, India",
+    "company": "Amazon",
+    "salary": {
+        "min": 50000,
+        "max": 70000,
+        "currency": "INR"
+    },
+    "jobType": "full-time",
+    "experienceLevel": "mid-level",
+    "skills": [
+        "Java",
+        "Spring",
+        "API development"
+    ],
+    "applicationDeadline": "2022-06-30",
+}
+```
+```json
+{
+    "title": "UI/UX Designer",
+    "description": "We are looking for a UI/UX designer to join our team. The ideal candidate should have experience in designing user interfaces using Adobe Photoshop and Sketch. They should also have a good understanding of user experience design and be comfortable working with a team.",
+    "location": "Bangalore, India",
+    "company": "Microsoft",
+    "salary": {
+        "min": 80000,
+        "max": 90000,
+        "currency": "INR"
+    },
+    "jobType": "full-time",
+    "experienceLevel": "mid-level",
+    "skills": [
+        "Adobe Photoshop",
+        "Sketch",
+        "User experience design"
+    ],
+    "applicationDeadline": "2022-06-30",
+}
+```
+```json
+{
+    "title": "Project Manager",
+    "description": "We are looking for a project manager to join our team. The ideal candidate should have experience in managing projects using Microsoft Project and Excel. They should also have a good understanding of project management and be comfortable working with a team.",
+    "location": "Bangalore, India",
+    "company": "Apple",
+    "salary": {
+        "min": 100000,
+        "max": 200000,
+        "currency": "INR"
+    },
+    "jobType": "full-time",
+    "experienceLevel": "mid-level",
+    "skills": [
+        "Microsoft Project",
+        "Excel",
+        "Project management"
+    ],
+    "applicationDeadline": "2022-06-30",
+}
+```
+```json
+{
+    "title": "Data Scientist",
+    "description": "We are looking for a data scientist to join our team. The ideal candidate should have experience in analyzing large datasets using Python and R. They should also have a good understanding of data visualization and be comfortable working with a team.",
+    "location": "Bangalore, India",
+    "company": "Facebook",
+    "salary": {
+        "min": 100000,
+        "max": 130000,
+        "currency": "INR"
+    },
+    "jobType": "full-time",
+    "experienceLevel": "mid-level",
+    "skills": [
+        "Python",
+        "R",
+        "Data visualization"
+    ],
+    "applicationDeadline": "2022-06-30",
+}
