@@ -78,7 +78,7 @@ const authController = {
                 return response.status(400).json({message:"No file uploaded"});
             }
             const user = await User.findByIdAndUpdate(request.userId, {profilePicture:request.file.path}, {new:true}).select('-password');
-            return response.status(200).json({message:"Profile picture uploaded successfully"}, user);
+            return response.status(200).json({message:"Profile picture uploaded successfully", user: user});
         }
         catch(error){
             return response.status(500).json({error:error.message});

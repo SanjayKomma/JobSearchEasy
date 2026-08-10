@@ -5,6 +5,7 @@ const companyRouter = require('./routes/companyRouter');
 const jobRouter = require('./routes/jobRouter');
 const applicationRouter = require('./routes/appilcationRouter');
 const app = express();
+app.use('/upload', express.static('upload'));
 app.use(cookieParser());
 app.use(express.json());
 app.use('/api/v1/auth', authRouter);
