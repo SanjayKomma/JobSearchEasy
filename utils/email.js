@@ -3,15 +3,15 @@ const { SMTP_USER, SMTP_PASS } = require("./config");
 
 // Create a transporter using SMTP
 const transporter = nodemailer.createTransport({
-  host: "smtp.example.com",
-  port: 587,
-  secure: false, // use STARTTLS (upgrade connection to TLS after connecting)
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true, // use STARTTLS (upgrade connection to TLS after connecting)
   auth: {
     user: SMTP_USER,
     pass: SMTP_PASS,
   },
 });
-function sendMail(to, subject, text) {
+async function sendMail(to, subject, text) {
     try {
     const info = await transporter.sendMail({
         from: `${SMTP_USER}`, // sender address

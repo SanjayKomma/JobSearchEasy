@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
+const { sendMail } = require('../utils/email');
 const { SALT_ROUNDS, JWT_SECRET, ENV } = require('../utils/config');
 const jwt = require('jsonwebtoken');
 const authController = {
@@ -17,6 +18,7 @@ const authController = {
                 password: hashedPassword
             });
             await newUser.save();
+            await sendMail("sanju.komma2@gmail.com", "JobSearchEasy", `Welcome to JobSearchEasy, ${name}!`);
             return response.status(201).json({message:"User registered successfully"});
         }
         catch(error){
@@ -68,6 +70,30 @@ const authController = {
         }
         catch(error){
             return res.status(500).json({error:error.message});
+        }
+    },
+    uploadProfilePicture: async (request, response) => {
+        try{
+            if(!request.file){
+                return response.status(400).json({message:"No file uploaded"});
+            }
+            const user = await User.findByIdAndUpdate(request.userId, {profilePicture:request.file.path}, {new:true}).select('-password');
+            return response.status(200).json({message:"Profile picture uploaded successfully"}, user);
+        }
+        catch(error){
+            return response.status(500).json({error:error.message});
+        }
+    },
+    uploadResume: async (request, response) => {
+        try{
+            if(!request.file){
+                return response.status(400).json({message:"No file uploaded"});
+            }
+            const user = await User.findByIdAndUpdate(request.userId, {resume:request.file.path}, {new:true}).select('-password');
+            return response.status(200).json({message:"Resume uploaded successfully"}, user);
+        }
+        catch(error){
+            return response.status(500).json({error:error.message});
         }
     }
 }

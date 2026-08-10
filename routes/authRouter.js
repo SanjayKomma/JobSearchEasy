@@ -1,9 +1,13 @@
 const express = require('express');
-const { register, login, getProfile, logout } = require('../controllers/authControllers');
+const User = require('../models/user');
+const upload = require('../middlewares/upload');
+const { register, login, getProfile, logout, uploadProfilePicture, uploadResume } = require('../controllers/authControllers');
 const { isAuthenticated } = require('../middlewares/auth');
 const authRouter = express.Router();
 authRouter.post('/register', register);
 authRouter.post('/login', login);
 authRouter.get('/getProfile', isAuthenticated, getProfile);
 authRouter.post('/logout', isAuthenticated, logout);
+authRouter.post('/upload/profile-picture', isAuthenticated, upload.single('profilePicture'),uploadProfilePicture);
+authRouter.post('/upload/resume', isAuthenticated, upload.single('resume'),uploadResume);
 module.exports = authRouter;
