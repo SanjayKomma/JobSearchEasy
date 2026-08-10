@@ -37,7 +37,7 @@ const applicationController = {
             const application = await Application.find({applicant: userId}).populate({
                 path: 'job',
                 select: 'title description location jobType experienceLevel company',
-                populate: company,
+                // populate: company,
                 populate:{
                     path: 'company',
                     select: 'name logo'
